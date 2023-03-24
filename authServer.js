@@ -10,7 +10,13 @@ const database = JSON.parse(rawdata);
 let users = database.users;
 const cors = require("cors");
 const bcrypt = require("bcrypt");
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    credentials: true,
+  })
+);
 const generateTokens = (payload) => {
   const { id, name } = payload;
   const accessToken = jwt.sign({ id, name }, process.env.ACCESS_TOKEN_SECRET, {
