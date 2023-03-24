@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 const fs = require("fs");
-const verifyToken = require("./middleware/auth");
+const verifyToken = require("./auth");
 const rawdata = fs.readFileSync("db.json");
 const database = JSON.parse(rawdata);
 let users = database.users;
