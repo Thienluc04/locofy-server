@@ -1,3 +1,3 @@
 # locofy-server
 
-Glitch page url: https://server-locofy.glitch.me/api/blogs
+Glitch page url: https://locofy-server.onrender.com/api

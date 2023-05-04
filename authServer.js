@@ -12,11 +12,13 @@ const cors = require("cors");
 const bcrypt = require("bcrypt");
 app.use(
   cors({
-    origin: "*",
+    origin: "https://locofy-server.onrender.com",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
+    allowedHeaders: true,
   })
 );
+
 const generateTokens = (payload) => {
   const { id, name } = payload;
   const accessToken = jwt.sign({ id, name }, process.env.ACCESS_TOKEN_SECRET, {
